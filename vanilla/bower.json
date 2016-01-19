@@ -1,6 +1,6 @@
 {
-  "name": "without_bow",
-  "homepage": "https://github.com/Leajen-croft/colin-wright",
+  "name": "poly-style",
+  "homepage": "",
   "authors": [
     "Leajen-croft <uiliam90@gmail.com>"
   ],
@@ -11,12 +11,10 @@
   "ignore": [
     "**/.*",
     "node_modules",
-    "bower_components",
-    "test",
-    "tests"
+    "bower_components"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#1.0.0",
+    "polymer": "Polymer/polymer#1.2.3",
     "google-map": "GoogleWebComponents/google-map#~1.1.7",
     "susy": "~2.2.9"
   }
