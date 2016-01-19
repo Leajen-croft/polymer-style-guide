@@ -1,0 +1,29 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<dom-module id="sg-custom-block">
+
+  <style>
+  h3.class-name {
+    line-height: 45px;
+    border: 1px solid #cccccc;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+  </style>
+  <template>
+    <h3 class="class-name">{{className}}</h3>
+    <content></content>
+  </template>
+</dom-module>
+<script>
+  Polymer({
+    is: "sg-custom-block",
+    properties: {
+      className: {
+        type: String,
+        value: 'default'
+      },
+    },
+  });
+</script>

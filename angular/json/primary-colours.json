@@ -1,0 +1,26 @@
+[
+  {
+  	"colourName": "Cod Grey",
+  	"hexValue": "#1d1d1d",
+  	"rgbValue": "29,29,29",
+  	"colourVariable": "codgrey"
+  },
+  {
+  	"colourName": "Sliver",
+  	"hexValue": "#cccccc",
+  	"rgbValue": "204,204,204",
+  	"colourVariable": "silver"
+  },
+  {
+  	"colourName": "Dove Grey",
+  	"hexValue": "#666666",
+  	"rgbValue": "102,102,102",
+  	"colourVariable": "dovegrey"
+  },
+  {
+  	"colourName": "Gallery",
+  	"hexValue": "#ededed",
+  	"rgbValue": "237,237,237",
+  	"colourVariable": "gallery"
+  }
+]

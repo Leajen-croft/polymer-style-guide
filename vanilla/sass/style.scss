@@ -1,0 +1,102 @@
+// Import Susy
+@import "bower_components/susy/sass/susy";
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,900,400italic,300|PT+Serif:400,700);
+$susy: (
+gutter-position: inside-static,
+container: 100%,
+columns: 12,
+column-width: 60px,
+gutters: 20px/60px,
+);
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 100%;
+  color: #1d1d1d;
+}
+.section-name {
+  font-family: 'PT Serif', serif;
+  font-size: 42px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0 10px;
+}
+h2 {
+  font-size: 32px;
+  font-weight: 300;
+  text-transform: capitalize;
+  padding: 10px 0;
+}
+button {
+  font-family: 'Roboto', sans-serif;
+}
+header {
+  @include container(1530px);
+  margin-bottom: 70px;
+  h1 {
+    font-family: TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif;
+    font-size: 92px;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    width: 100%;
+    background: #1d1d1d;
+    text-align: center;
+    padding: 25px 0;
+  }
+  h2 {
+    font-size: 42px;
+    font-weight: 300;
+    text-transform: capitalize;
+    width: 100%;
+    background: #cccccc;
+    text-align: center;
+    padding: 25px 0;
+  }
+}
+.colours, .elements {
+  @include container(1530px);
+}
+.primary-colours, .secondary-colours {
+  @include span(1 of 1);
+  @include susy-breakpoint(35em) {
+    @include span(1 of 2);
+  }
+  h2 {
+    padding: 0 10px;
+  }
+  sg-colour-pallete {
+    @include span(1 of 1);
+    @include susy-breakpoint(49.063em) {
+      @include span(1 of 2);
+    }
+  }
+}
+.form, .typography, .patterns {
+  @include span(1 of 1);
+  @include susy-breakpoint(35em) {
+    @include span(1 of 2);
+  }
+}
+
+code {
+  white-space: pre-wrap;
+  background: #eee;
+  color: #000;
+  font-family: Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,sans-serif;
+  clear: both;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px;
+  margin: 10px 0 10px;
+}
+
+link-block p a:hover{
+  text-decoration: underline !important;
+}
+sg-input, sg-button  {
+  display: block;
+  clear: both;
+  margin: 20px 0;
+  overflow: hidden;
+}

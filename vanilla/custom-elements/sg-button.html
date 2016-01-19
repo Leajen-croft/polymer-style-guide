@@ -1,0 +1,33 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<dom-module id="sg-button">
+
+  <style>
+  h3.class-name {
+    line-height: 45px;
+    border: 1px solid #cccccc;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+  }
+  </style>
+  <template>
+      <h3 class="class-name">{{className}}</h3>
+      <button class="button one" type="button" name="button">Button</button>
+      <input class="button two" type="button" name="button" value="input button">
+      <a href="#" class="button three">Link Button</a>
+      <content></content>
+  </template>
+</dom-module>
+<script>
+  Polymer({
+    is: "sg-button",
+    properties: {
+      className: {
+        type: String,
+        value: 'button-default'
+      },
+    },
+  });
+</script>

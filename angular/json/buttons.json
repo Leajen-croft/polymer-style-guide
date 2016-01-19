@@ -1,0 +1,67 @@
+[
+  {
+  	"className": "button",
+  	"backgroundColour": "#1262A0",
+  	"startColour": "#377aaf",
+    "endColour":"#1262a0",
+    "textColour":"#ffffff",
+    "textSize": "18px",
+    "height": "50px",
+    "emboss": "inset 0 22px 1px -20px rgba(255,255,255,0.2)",
+    "border": "1px solid #1262a0",
+    "borderRadius": "4px",
+    "hoverState": "background:linear-gradient(#639cc9 , #468abf);"
+  },
+  {
+    "className": "button--large",
+    "backgroundColour": "#1262A0",
+    "startColour": "#377aaf",
+    "endColour":"#1262a0",
+    "textColour":"#ffffff",
+    "textSize": "18px",
+    "height": "60px",
+    "emboss": "inset 0 22px 1px -20px rgba(255,255,255,0.2)",
+    "border": "1px solid #1262a0",
+    "borderRadius": "4px",
+    "hoverState": "background:linear-gradient(#639cc9 , #468abf);"
+  },
+  {
+    "className": "button--small",
+    "backgroundColour": "#1262A0",
+    "startColour": "#377aaf",
+    "endColour":"#1262a0",
+    "textColour":"#ffffff",
+    "textSize": "18px",
+    "height": "35px",
+    "emboss": "inset 0 22px 1px -20px rgba(255,255,255,0.2)",
+    "border": "1px solid #1262a0",
+    "borderRadius": "4px",
+    "hoverState": "background:linear-gradient(#639cc9 , #468abf);"
+  },
+  {
+    "className": "button--alternative",
+    "backgroundColour": "#80d9ea",
+    "startColour": "#80d9ea",
+    "endColour":"#69d2e7",
+    "textColour":"#ffffff",
+    "textSize": "18px",
+    "height": "50px",
+    "emboss": "inset 0 22px 1px -20px rgba(255,255,255,0.2)",
+    "border": "1px solid #55c3de",
+    "borderRadius": "4px",
+    "hoverState": "background:linear-gradient(#9be4f2 , #88dff0);"
+  },
+  {
+    "className": "button--disabled",
+    "backgroundColour": "#d4d4d4",
+    "startColour": "#d4d4d4",
+    "endColour":"#cccccc",
+    "textColour":"#666666",
+    "textSize": "18px",
+    "height": "50px",
+    "emboss": "inset 0 22px 1px -20px rgba(255,255,255,0.2)",
+    "border": "1px solid #aaaaaa",
+    "borderRadius": "4px",
+    "hoverState": ""
+  }
+]

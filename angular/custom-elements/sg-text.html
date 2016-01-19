@@ -1,0 +1,41 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<dom-module id="sg-text">
+
+  <style>
+  h3.class-name {
+    line-height: 45px;
+    border: 1px solid #cccccc;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+  h2 {
+    height: 90px;
+    line-height: 90px;
+  }
+  h2:focus {
+    outline: none;
+    border-bottom: 1px solid  #69d3ef;
+  }
+  </style>
+  <template>
+    <h3 class="class-name">{{className}}</h3>
+    <h2 contentEditable="true" style$="{{sgStyle}}"><content select=".text"></content></h2>
+    <content select="code"></content>
+  </template>
+</dom-module>
+<script>
+  Polymer({
+    is: "sg-text",
+    properties: {
+      className: {
+        type: String,
+        value: 'default'
+      },
+      sgStyle: {
+        type: String,
+      },
+    },
+  });
+</script>

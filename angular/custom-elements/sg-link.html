@@ -1,0 +1,83 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<dom-module id="sg-link">
+
+  <style>
+  h3.class-name {
+    line-height: 45px;
+    border: 1px solid #cccccc;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+  </style>
+  <template>
+    <h3 class="class-name">{{className}}</h3>
+    <p style$="font-family:{{fontFamily}}; font-size:{{fontSize}}; font-weight:{{fontWeight}}; font-style:{{fontStyle}}; line-height:{{height}}; text-transform:{{textTransform}}">{{previewText}} <a href="#" style$="color: {{linkColour}}; font-weight:{{linkWeight}}; font-style:{{linkStyle}}; text-decoration:{{underline}}">external link</a></p>
+    <code class="css-code">
+      [[cssGen]]
+    </code>
+  </template>
+</dom-module>
+<script>
+  Polymer({
+    is: "sg-link",
+    properties: {
+      className: {
+        type: String,
+        value: 'default'
+      },
+      previewText: {
+        type: String,
+        value: 'default'
+      },
+      fontFamily: {
+        type: String,
+        value: 'serif'
+      },
+      fontSize: {
+        type: String,
+        value: '30px'
+      },
+      fontWeight: {
+        type: String,
+        value: '400'
+      },
+      fontStyle: {
+        type: String,
+        value: 'normal'
+      },
+      textTransform: {
+        type: String,
+        value: 'none'
+      },
+      linkColour: {
+        type: String,
+        value: '#1262a0'
+      },
+      linkWeight: {
+        type: String,
+        value: '400'
+      },
+      linkStyle: {
+        type: String,
+        value: 'normal'
+      },
+      underline: {
+        type: String,
+        value: 'none'
+      },
+      height: {
+        type: String,
+        value: '90px',
+      },
+      cssGen: {
+        type: String,
+        computed: 'computecss(className, linkColour, linkWeight, linkStyle, underline)'
+      },
+    },
+    computecss: function(className, linkColour, linkWeight, linkStyle, underline) {
+      return '.' + className +'{color:' + [[linkColour]] + ';font-weight:' + [[linkWeight]] + ';font-style:' + [[linkStyle]] +';text-decoration:' + [[underline]] + ';}';
+    },
+  });
+</script>
