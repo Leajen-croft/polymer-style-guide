@@ -14,9 +14,9 @@
   </style>
   <template>
       <h3 class="class-name">{{className}}</h3>
-      <button class="button one" type="button" name="button">Button</button>
-      <input class="button two" type="button" name="button" value="input button">
-      <a href="#" class="button three">Link Button</a>
+      <button class$="{{className}} button one" type="button" name="button">Button</button>
+      <input class$="{{className}} button two" type="button" name="button" value="input button">
+      <a href="#" class$="{{className}} button three">Link Button</a>
       <content></content>
   </template>
 </dom-module>

@@ -3,10 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,500,700,300|Titillium+Web' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/atoms.css">
     <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
-    <script src="bower_components/angular/angular.min.js"></script>
     <script src="js/app.js"></script>
     <link rel="import" href="custom-elements/sg-colour-pallete.html">
     <link rel="import" href="custom-elements/sg-button.html">
@@ -15,194 +16,71 @@
     <link rel="import" href="custom-elements/sg-input.html">
     <link rel="import" href="custom-elements/sg-alert.html">
     <link rel="import" href="custom-elements/sg-custom-block.html">
+    <link rel="import" href="custom-elements/sg-font.html">
   </head>
-  <body ng-app="styleGuide">
+  <body>
     <header>
-      <h1>Allied Cables</h1>
+      <h1>Pyramid Installations</h1>
       <h2>Front-end Style Guide</h2>
     </header>
     <section class="colours">
+      <h2 class="section-name">1. font Families</h2>
+      <sg-font Font-name="asap" font-family="font-family: 'Asap', sans-serif;" html-import="<link href='https://fonts.googleapis.com/css?family=Asap' rel='stylesheet' type='text/css'>" css-import="@import url(https://fonts.googleapis.com/css?family=Asap);"></sg-font>
+    </section>
+    <section class="colours">
       <h2 class="section-name">1. Colours</h2>
-      <section ng-controller="primaryColourController as primaryColourCtrl" class="primary-colours">
-        <style ng-repeat="pColours in primaryColours">
-        .{{pColours.colourVariable}}:hover {
-        }
-        </style>
+      <section class="primary-colours">
         <h2>Primary Colours</h2>
-        <sg-colour-pallete class="{{pColours.colourVariable}}" ng-repeat="pColours in primaryColours" colour-name="{{pColours.colourName}}" hex-value="{{pColours.hexValue}}" rgb-value="{{pColours.rgbValue}}" colour-variable="{{pColours.colourVariable}}"></sg-colour-pallete>
+        <sg-colour-pallete colour-name="Scooter" hex-value="#37bec6" rgb-value="55,190,198" colour-variable="scooter"></sg-colour-pallete>
+        <sg-colour-pallete colour-name="Pastel" hex-value="#ff6e6e" rgb-value="255,110,110" colour-variable="pastel"></sg-colour-pallete>
+        <sg-colour-pallete colour-name="Macaroni" hex-value="#ffb770" rgb-value="255,183,112" colour-variable="macaroni"></sg-colour-pallete>
       </section>
-      <section ng-controller="secondaryColourController as secondaryColourCtrl" class="primary-colours">
+      <section class="primary-colours">
         <h2>Secondary Colours</h2>
-        <sg-colour-pallete ng-repeat="sColours in secondaryColours" colour-name="{{sColours.colourName}}" hex-value="{{sColours.hexValue}}" rgb-value="{{sColours.rgbValue}}" colour-variable="{{sColours.colourVariable}}"></sg-colour-pallete>
+        <sg-colour-pallete colour-name="Cod Grey" hex-value="#1d1d1d" rgb-value="29,29,29" colour-variable="cod-grey"></sg-colour-pallete>
+        <sg-colour-pallete colour-name="Cape Cod" hex-value="#3f3f3f" rgb-value="63,63,63" colour-variable="cape-cod"></sg-colour-pallete>
+        <sg-colour-pallete colour-name="Celeste" hex-value="#cfcfcf" rgb-value="207,207,207" colour-variable="celeste"></sg-colour-pallete>
+        <sg-colour-pallete colour-name="Flash" hex-value="#f3f3f3" rgb-value="243,243,243" colour-variable="flash"></sg-colour-pallete>
+        <sg-colour-pallete colour-name="Black" hex-value="#000000" rgb-value="0,0,0" colour-variable="black"></sg-colour-pallete>
       </section>
     </section>
     <section class="elements">
       <h2 class="section-name">2. elements</h2>
       <section class="form">
         <h2>Form</h2>
-        <section ng-controller="buttonController as btnCtrl">
-          <sg-button ng-repeat="button in buttons" class="{{button.className}}" class-name="{{button.className}}">
-          <style>
-            .{{button.className}} .button.sg-button {
-              transition: all 350ms ease;
-              display: inline-block;
-              min-width: 170px;
-              padding: 0;
-              text-align: center;
-              text-decoration: none;
-              box-sizing: border-box;
-              cursor: pointer;
-              background-color:{{button.backgroundColour}};
-              background:linear-gradient({{button.startColour}} , {{button.endColour}});
-              color:{{button.textColour}};
-              font-size:{{button.textSize}};
-              height:{{button.height}};
-              line-height:{{button.height}};
-              box-shadow:{{button.emboss}};
-              border:{{button.border}};
-              border-radius:{{button.borderRadius}};
-            }
-            .{{button.className}} .button.sg-button:hover {
-              {{button.hoverState}}
-            }
-          </style>
-          <pre><code>
-            .{{button.className}} {
-              transition: all 350ms ease;
-              display: inline-block;
-              min-width: 170px;
-              padding: 0;
-              text-align: center;
-              text-decoration: none;
-              box-sizing: border-box;
-              cursor: pointer;
-              background-color:{{button.backgroundColour}};
-              background:linear-gradient({{button.startColour}} , {{button.endColour}});
-              color:{{button.textColour}};
-              font-size:{{button.textSize}};
-              height:{{button.height}};
-              line-height:{{button.height}};
-              box-shadow:{{button.emboss}};
-              border:{{button.border}};
-              border-radius:{{button.borderRadius}};
-            }
-            <br/><br/>
-            .{{button.className}}:hover {
-              {{button.hoverState}}
-            }
-          </code></pre>
-          </sg-button>
-        </section>
-        <section ng-controller="inputController as inputCtrl">
-          <sg-input ng-repeat="input in inputs" class="{{input.className}}" class-name="{{input.className}}" type="{{input.inputType}}" place-holder="{{input.placeHolder}}" label-text="{{input.labelText}}">
-          <style>
-            .{{input.className}} .form-container .form-item input, .{{input.className}} .form-container input {
-              color: {{input.textColour}};
-              font-size: {{input.textSize}};
-              border: {{input.border}};
-              border-radius: {{input.borderRadius}};
-              height: {{input.height}};
-              box-shadow:{{input.boxShadow}};
-              background:{{input.backgroundColour}};
-              line-height:{{input.height}};
-            }
-            .{{input.className}} .form-container .form-item input:focus, .{{input.className}} .form-container input:focus {
-              {{input.focusState}}
-            }
-            .{{input.className}} .form-container .form-item .form-note {
-              color: {{input.noteColour}};
-              font-size: {{input.noteSize}};
-            }
-            .{{input.className}} .form-container label {
-              color: {{input.labelColour}};
-              font-size: {{input.labelSize}};
-              margin: {{input.labelMargin}}
-            }
-            .{{input.className}} .form-container label span{
-              color: {{input.starColour}};
-            }
-          </style>
-          <pre><code class="language-css">
-            .{{input.className}} input {
-              color: {{input.textColour}};
-              font-size: {{input.textSize}};
-              border: {{input.border}};
-              border-radius: {{input.borderRadius}};
-              height: {{input.height}};
-              box-shadow:{{input.boxShadow}}
-              background:{{input.backgroundColour}};
-              line-height:{{input.height}};
-            }
-
-            .{{input.className}} input:focus {
-              {{input.focusState}}
-            }
-
-            .{{input.className}} .form-note {
-              color: {{input.noteColour}};
-              font-size: {{input.noteSize}};
-            }
-
-            .{{input.className}} label {
-              color: {{input.labelColour}};
-              font-size: {{input.labelSize}};
-              margin: {{input.labelMargin}}
-            }
-
-            .{{input.className}} label span{
-              color: {{input.starColour}};
-            }
-          </code></pre>
-        </sg-input>
-      </section>
+          <sg-button class-name="button--default"></sg-button>
+          <sg-button class-name="button--arrow"></sg-button>
+          <sg-input class-name="default" type="text" place-holder="Placeholder text" label-text="label text"></sg-input>
       </section>
       <section class="typography">
         <h2>Headings</h2>
-        <sg-text class-name="display--font" sg-style="font-family:'PT Serif'; font-size:70px; font-weight:700; text-transform:uppercase;">
-          <div class="text">Allied Cables</div>
-          <code class="language-css">.display--font {font-family:'PT Serif'; font-size:70px; font-weight:700; text-transform:uppercase;}</code>
+        <sg-text class-name="title">
+          <div class="text">title</div>
         </sg-text>
-        <sg-text class-name="main--heading" sg-style="font-family:'Roboto'; font-size:40px; font-weight:400; text-transform:capitalize;">
-          <div class="text">Allied Cables</div>
-          <code>.main--heading {font-family:'Roboto'; font-size:40px; font-weight:400; text-transform:capitalize;}</code>
+        <sg-text class-name="title title--small">
+          <div class="text">title</div>
         </sg-text>
-        <sg-text class-name="heading" sg-style="font-family:'Roboto'; font-size:32px; font-weight:400; text-transform:capitalize;">
-          <div class="text">Allied Cables</div>
-          <code>.heading {font-family:'Roboto'; font-size:32px; font-weight:400; text-transform:capitalize;}</code>
+        <sg-text class-name="body--copy">
+          <div class="text">Lorem ipsum dolor sit amet</div>
         </sg-text>
-        <sg-text class-name="sub--heading" sg-style="font-family:'Roboto'; font-size:24px; font-weight:400; text-transform:capitalize;">
-          <div class="text">Allied Cables</div>
-          <code>.sub--heading {font-family:'Roboto'; font-size:24px; font-weight:400; text-transform:capitalize;}</code>
-        </sg-text>
-        <sg-text class-name="prom" sg-style="font-family:'Roboto'; font-size:18px; font-weight:400; text-transform:capitalize;">
-          <div class="text">Allied Cables</div>
-          <code>.prom {font-family:'Roboto'; font-size:18px; font-weight:400; text-transform:capitalize;}</code>
-        </sg-text>
-        <sg-text class-name="body--copy" sg-style="font-family:'Roboto'; font-size:16px; font-weight:400; text-transform:capitalize;">
-          <div class="text">Allied Cables</div>
-          <code>.body--copy {font-family:'Roboto'; font-size:16px; font-weight:400; text-transform:capitalize;}</code>
+        <sg-text class-name="alt">
+          <div class="text">Lorem ipsum dolor sit amet</div>
         </sg-text>
         <h2>Links</h2>
-        <sg-link class-name="a-rel-external" preview-text ="Allied Cables" font-family="'Roboto'" font-size="16px" font-weight="400" text-transform="normal" link-colour="#1262a0" link-weight="700" link-style="normal"></sg-link>
-      </section>
-      <section class="patterns">
-        <h2>Patterns</h2>
-        <sg-alert class-name="alert--info" sg-style="background:#69d2e7; color:#ffffff; font-family:'Roboto'; font-size:16px; font-weight:400; padding:15px;">
-          <div class="text">This is a notification with some information.</div>
-          <code>.alert-info {background:#69d2e7; color:#ffffff; font-family:'Roboto'; font-size:16px; font-weight:400; line-height:50px; height:50px; padding:0 15px;}</code>
-        </sg-alert>
-        <sg-alert class-name="alert--failure" sg-style="background:#e9261c; color:#ffffff; font-family:'Roboto'; font-size:16px; font-weight:400; padding:15px;">
-          <div class="text">This is a notification of a failed action or event.</div>
-          <code>.alert--failure {background:#e9261c; color:#ffffff; font-family:'Roboto'; font-size:16px; font-weight:400; line-height:50px; height:50px; padding:0 15px;}</code>
-        </sg-alert>
-        <sg-alert class-name="alert--success" sg-style="background:#8fbe00; color:#ffffff; font-family:'Roboto'; font-size:16px; font-weight:400; padding:15px;">
-          <div class="text">This is a notification of a successful action or event.</div>
-          <code>.alert--success {background:#8fbe00; color:#ffffff; font-family:'Roboto'; font-size:16px; font-weight:400; line-height:50px; height:50px; padding:0 15px;}</code>
-        </sg-alert>
-        <sg-alert class-name="alert--general" sg-style="background:#e9b90c; color:#ffffff; font-family:'Roboto'; font-size:16px; font-weight:400; padding:15px;">
-          <div class="text">This is a general notification.</div>
-          <code>.alert--general {background:#e9b90c; color:#ffffff; font-family:'Roboto'; font-size:16px; font-weight:400; line-height:50px; height:50px; padding:0 15px;}</code>
-        </sg-alert>
+        <sg-link class-name="a-rel-external" preview-text ="Allied Cables" font-family="'Raleway'" font-size="16px" font-weight="400" text-transform="normal" link-colour="#37BEC6" link-weight="500" link-style="normal"></sg-link>
+        <h2>Lists</h2>
+        <sg-custom-block>
+          <ul>
+            <li>one</li>
+            <li>two</li>
+            <li>three</li>
+          </ul>
+          <ol>
+            <li>one</li>
+            <li>two</li>
+            <li>three</li>
+          </ol>
+        </sg-custom-block>
       </section>
     </section>
   </body>
