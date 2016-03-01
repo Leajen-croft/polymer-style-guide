@@ -100,3 +100,9 @@ sg-input, sg-button  {
   margin: 20px 0;
   overflow: hidden;
 }
+sg-font {
+  @include span(1 of 1);
+  @include susy-breakpoint(49.063em) {
+    @include span(1 of 2);
+  }
+}

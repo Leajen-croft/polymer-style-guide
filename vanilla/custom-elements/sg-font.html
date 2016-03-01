@@ -3,29 +3,47 @@
 <dom-module id="sg-font">
 
   <style>
-  h3.class-name {
-    line-height: 45px;
+  section {
     border: 1px solid #cccccc;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 0 0 10px;
+    box-sizing: border-box;
+    margin: 10px 0;
+  }
+  h3.font-family {
+    color: #1d1d1d;
+    background: #F3F3F3;
+    line-height: 45px;
     width: 100%;
     padding: 0 20px;
     box-sizing: border-box;
+    font-size: 24px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #cccccc;
+  }
+  p {
+    color: #666666;
+    padding: 0 10px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+  strong {
+    font-weight: 700;
   }
   </style>
   <template>
-    <h3 class="font-family" style$="{{fontFamily}}">{{fontName}}</h3>
-    <p>font Family {{fontFamily}}</span></p>
-    <p>HTML Import({{htmlImport}})</span></p>
-    <p>css Import{{cssImport}}</p>
+    <section>
+      <h3 class="font-family" style$="{{fontFamily}}">{{fontFamily}}</h3>
+      <p><strong>HTML Import:</strong> {{htmlImport}}</span></p>
+      <p><strong>css Import:</strong> {{cssImport}}</p>
+    </section>
   </template>
 </dom-module>
 <script>
   Polymer({
     is: "sg-font",
     properties: {
-      FontName: {
-        type: String,
-        value: 'default'
-      },
       fontFamily: {
         type: String,
       },

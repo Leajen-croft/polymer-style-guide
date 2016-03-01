@@ -132,3 +132,21 @@ sg-input, sg-button {
   clear: both;
   margin: 20px 0;
   overflow: hidden; }
+
+sg-font {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  float: left;
+  padding-left: 10px;
+  padding-right: 10px; }
+  @media (min-width: 49.063em) {
+    sg-font {
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      width: 50%;
+      float: left;
+      padding-left: 10px;
+      padding-right: 10px; } }
